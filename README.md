@@ -2,8 +2,7 @@
 E-voting application based on ethereum blockchain
 
 Requirements: 
-Node
-Ganache
+Node and Ganache
 
 Running the program: 
 1)Start Ganache
