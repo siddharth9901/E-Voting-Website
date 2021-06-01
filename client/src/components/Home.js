@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-//import '../CSS/Home.css';
-//import "bootstrap/dist/css/bootstrap.min.css";
-//import './mainStyle.css';
 import img1 from "../images/login_background.jpg"
 import { NavLink, useHistory } from 'react-router-dom';
-//import Cookies from 'js-cookie';
-import axios from 'axios';
 
 
 const Home = () => {
@@ -26,10 +21,8 @@ const Home = () => {
       })
     });
     const data = res.json();
-    //console.log(res.status);
     if (res.status === 400 || !data) {
       window.alert("Invalid Credentials");
-      //console.log();
     } else{
       sessionStorage.setItem('voter', voter);
       window.location.href = "/vote.html";

@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
-// const jwt = require('jsonwebtoken');
 
 const AdminSchema = new mongoose.Schema({
     name: {
@@ -22,9 +21,7 @@ const AdminSchema = new mongoose.Schema({
 })
 
 
-
 //PASSWORD HASHING:
-
 AdminSchema.pre('save', async function (next)  {
     //console.log("Hi from inside");
     if(this.isModified('password')){
@@ -34,9 +31,6 @@ AdminSchema.pre('save', async function (next)  {
     next();
 });
 
-
-
 //Creating collection
 const Admin = mongoose.model('ADMIN',AdminSchema); 
-
 module.exports = Admin;

@@ -1,20 +1,15 @@
 import React, { useState } from 'react';
-//import express from 'express';
 import { NavLink, useHistory } from 'react-router-dom';
-//import '../CSS/Signup.css'
-//import './mainStyle.css';
-
 
 
 const AdminLogin = () => {
-
   const history = useHistory();
   const [user, setUser] = useState({
     username: "",
     password: "",
   });
 
-  let name, value;//(#28 8:20)
+  let name, value;
   const handleInupts = (e) => {
     name = e.target.name;
     value = e.target.value;
@@ -22,8 +17,7 @@ const AdminLogin = () => {
     setUser({ ...user, [name]: value });
   }
 
-  const PostData = async () => {//(e)
-    // e.preventDefault();
+  const PostData = async () => {
     const {username, password} = user;//Obj destructuring
     const res = await fetch("http://localhost:5000/signinAdmin", {
       method: "POST",
@@ -44,7 +38,6 @@ const AdminLogin = () => {
       window.alert(" Login Successful");
       console.log(" Login Successful");
       window.location.href = "/results.html";
-      //history.push("/results.html");
     }
   }
 
@@ -55,7 +48,6 @@ const AdminLogin = () => {
     var b = document.forms["createNew_user"]["username"].value;
     document.getElementById('username_error').innerHTML = '';
     if (b === null || b === "") {
-      // alert("Email must be filled out");
       error++;
       document.getElementById('username_error').innerHTML = 'User Name must be filled out';
     }
@@ -64,7 +56,6 @@ const AdminLogin = () => {
     var e = document.forms["createNew_user"]["password"].value;
     document.getElementById('password_error').innerHTML = '';
     if (e === null || e === "") {
-      // alert("Roll no must be filled out");
       error++;
       document.getElementById('password_error').innerHTML = 'Please fill the Password';
     }
@@ -74,7 +65,6 @@ const AdminLogin = () => {
     }
 
   }
-
 
   return (
     <div class="create-account-whole-page">
@@ -112,7 +102,6 @@ const AdminLogin = () => {
                 onClick={validateForm}
               />
             </div>
-            {/* <button onClick={PostData}>Take the Shot!</button>  */}
           </div>
         </form>
       </div>

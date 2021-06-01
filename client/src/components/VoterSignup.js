@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-//import express from 'express';
 import { NavLink, useHistory } from 'react-router-dom';
-//import '../CSS/Signup.css'
-//import './mainStyle.css';
 
 
 
@@ -16,7 +13,7 @@ const VoterSignup = () => {
     cpassword: ""
   });
 
-  let name, value;//(#28 8:20)
+  let name, value;
   const handleInupts = (e) => {
     name = e.target.name;
     value = e.target.value;
@@ -24,8 +21,7 @@ const VoterSignup = () => {
     setUser({ ...user, [name]: value });
   }
 
-  const PostData = async () => {//(e)
-    // e.preventDefault();
+  const PostData = async () => {
     const { name, username, password, cpassword } = user;//Obj destructuring
     const res = await fetch("http://localhost:5000/register", {
       method: "POST",
@@ -55,7 +51,6 @@ const VoterSignup = () => {
     var a = document.forms["createNew_user"]["name"].value;
     document.getElementById('name_error').innerHTML = '';
     if (a === null || a === "") {
-      // alert("Name must be filled out");
       error++;
       document.getElementById('name_error').innerHTML = 'Name must be filled out';
     }
@@ -63,7 +58,6 @@ const VoterSignup = () => {
     var b = document.forms["createNew_user"]["username"].value;
     document.getElementById('username_error').innerHTML = '';
     if (b === null || b === "") {
-      // alert("Email must be filled out");
       error++;
       document.getElementById('username_error').innerHTML = 'User Name must be filled out';
     }
@@ -72,7 +66,6 @@ const VoterSignup = () => {
     var e = document.forms["createNew_user"]["password"].value;
     document.getElementById('password_error').innerHTML = '';
     if (e === null || e === "") {
-      // alert("Roll no must be filled out");
       error++;
       document.getElementById('password_error').innerHTML = 'Please fill the Password';
     }
@@ -80,7 +73,6 @@ const VoterSignup = () => {
     var f = document.forms["createNew_user"]["cpassword"].value;
     document.getElementById('cpassword_error').innerHTML = '';
     if (f === null || f === "") {
-      // alert("Roll no must be filled out");
       error++;
       document.getElementById('cpassword_error').innerHTML = 'Please confirm your Password';
     } else if (f !== e) {
@@ -152,7 +144,6 @@ const VoterSignup = () => {
               />
             </div>
 
-            {/* <button onClick={PostData}>Take the Shot!</button>  */}
 
           </div>
         </form>
