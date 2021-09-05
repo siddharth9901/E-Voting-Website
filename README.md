@@ -1,4 +1,4 @@
-# NetSecJcomp
+# E-Voting Wesite
 E-voting application based on ethereum blockchain
 
 Requirements: 
